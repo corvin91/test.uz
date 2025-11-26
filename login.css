@@ -1,0 +1,202 @@
+/* =========================================
+   GLOBAL SETTINGS
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Background */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+}
+
+/* Card */
+.container {
+  width: 100%;
+  max-width: 380px;
+  padding: 28px;
+
+  border-radius: 18px;
+
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  box-shadow:
+    0 0 25px rgba(79,70,229,0.25),
+    inset 0 0 12px rgba(255,255,255,0.04);
+
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+.container h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #c7d2fe;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  border-radius: 12px;
+  border: 1px solid #334155;
+  outline: none;
+
+  background: #0f172a;
+  color: #f8fafc;
+
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+}
+
+/* Button */
+button {
+  margin-top: 14px;
+  width: 100%;
+  height: 42px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .5px;
+
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px #4f46e5;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Error text */
+.text {
+  color: #f87171;
+  font-size: 14px;
+  margin-top: 8px;
+  display: none;
+}
+
+/* ✅ Phones */
+@media (max-width: 400px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container h2 {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+/* ✅ Tablets */
+@media (min-width: 401px) and (max-width: 768px) {
+  .container {
+    max-width: 500px;
+    padding: 32px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  input {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    height: 46px;
+  }
+}
+
+/* ✅ Laptops / iMac */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .container {
+    max-width: 600px;
+    padding: 40px;
+  }
+
+  .container h2 {
+    font-size: 28px;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  button {
+    font-size: 17px;
+    height: 50px;
+  }
+}
+
+/* ✅ Ultra large screens / TV */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 700px;
+    padding: 50px;
+  }
+
+  .container h2 {
+    font-size: 32px;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  button {
+    font-size: 18px;
+    height: 55px;
+  }
+}

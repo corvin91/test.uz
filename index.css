@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+}
+
+/* Card */
+.test-box {
+  width: 100%;
+  max-width: 520px;
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 0 20px rgba(79, 70, 229, 0.2),
+    inset 0 0 15px rgba(255,255,255,0.03);
+
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Sahifa raqami */
+.page {
+  text-align: right;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+/* Username */
+.username {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #c7d2fe;
+}
+
+/* Savol */
+#question {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+/* Javoblar */
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer {
+  padding: 14px 12px;
+  border-radius: 14px;
+
+  text-align: center;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid #334155;
+  color: #e2e8f0;
+
+  transition: all 0.25s ease;
+}
+
+.answer:hover {
+  transform: scale(1.02);
+  background: linear-gradient(145deg, #243249, #111827);
+  border-color: #6366f1;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+}
+
+.answer.selected { border: 2px solid #38bdf8; box-shadow: 0 0 15px #38bdf8; }
+.answer.correct { background: linear-gradient(145deg, #022c22, #064e3b); border-color: #10b981; box-shadow: 0 0 15px #10b981; }
+.answer.wrong { background: linear-gradient(145deg, #3f0d0d, #450a0a); border-color: #ef4444; box-shadow: 0 0 15px #ef4444; }
+
+/* Natija */
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 17px;
+  color: #f1f5f9;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  width: 50%;
+  height: 42px;
+  border-radius: 999px;
+
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 15px #4f46e5; }
+button:active { transform: scale(0.96); }
+
+/* Modal */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
+.modal-content { background: #111827; padding: 25px; border-radius: 15px; text-align: center; width: 300px; }
+
+/* =========================
+   Responsive
+========================= */
+
+/* Juda kichik ekranlar */
+@media (max-width: 350px) {
+  #question { font-size: 14px; }
+  .answer { font-size: 13px; padding: 10px; }
+  .test-box { padding: 15px; }
+  button { font-size: 13px; height: 38px; }
+}
+
+/* Telefonlar */
+@media (max-width: 600px) {
+  .test-box { padding: 18px; max-width: 95%; }
+  #question { font-size: 16px; }
+  .answer { padding: 12px 8px; font-size: 14px; }
+  .buttons { flex-direction: column; gap: 10px; }
+  button { width: 100%; }
+}
+
+/* Planshetlar */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .test-box { max-width: 600px; padding: 28px; }
+  #question { font-size: 18px; }
+  .answer { font-size: 15px; padding: 14px 12px; }
+  button { height: 45px; font-size: 15px; }
+}
+
+/* Laptops / iMac */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .test-box { max-width: 700px; padding: 35px; }
+  #question { font-size: 20px; }
+  .answer { font-size: 16px; padding: 16px 14px; }
+  button { height: 50px; font-size: 16px; }
+}
+
+/* Ultra katta ekranlar / TV */
+@media (min-width: 1441px) {
+  .test-box { max-width: 800px; padding: 45px; }
+  #question { font-size: 22px; }
+  .answer { font-size: 18px; padding: 18px 16px; }
+  button { height: 55px; font-size: 18px; }
+}
+.back-btn{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #111827;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.back-btn:hover{
+  background: #1f2937;
+  transform: scale(1.05);
+}
+
+/* Telefonlar uchun */
+@media (max-width: 600px){
+  .back-btn{
+    font-size: 12px;
+    padding: 6px 12px;
+    top: 10px;
+    left: 10px;
+  }
+}

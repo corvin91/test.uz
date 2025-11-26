@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Test</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- BACK BUTTON -->
+<a href="studentcode.html" class="back-btn">⬅ Orqaga</a>
+
+<div class="test-box">
+  <div id="page"></div>
+  <h1 class="username"></h1>
+
+  <div id="question"></div>
+  <div id="answers"></div>
+
+  <!-- MODAL -->
+  <div id="warningModal" class="modal">
+    <div class="modal-box">
+      <h3>❗ Hamma savol belgilanmadi</h3>
+      <p>Iltimos barcha savollarni belgilang</p>
+      <button onclick="closeModal()">Tushundim</button>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="prevQuestion()">Orqaga</button>
+    <button onclick="nextQuestion()">Keyingisi</button>
+  </div>
+</div>
+
+<script src="about.js"></script>
+</body>
+</html>
